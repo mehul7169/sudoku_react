@@ -1,16 +1,3 @@
-import {useParams} from "react-router-dom"
- 
-export default function Sudoku() {
-    const{ difficulty } = useParams()
-    
-    return (
-        <div className="App">
-            <h2>{difficulty}</h2>
-
-        </div>
-    )
-}
-
 grid = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
 [5, 2, 0, 0, 0, 0, 0, 0, 0],
 [0, 8, 7, 0, 0, 0, 0, 3, 1],
@@ -100,5 +87,5 @@ function createPuzzle(difficulty) {
 }
 
 
-// gridRandom = createPuzzle('Easy');
-// console.log(grid)
+gridRandom = createPuzzle('Easy');
+console.log(grid)
