@@ -1,13 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import Home from './Pages/Home'
+import Sudoku from './Pages/Sudoku'
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path = '/'>
+      <Route index element = {<Home />}></Route>
+      <Route path=':difficulty' element = {<Sudoku />}></Route>
+    </Route>
+  )
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
+    <RouterProvider router = {router}></RouterProvider>
   );
 }
 
